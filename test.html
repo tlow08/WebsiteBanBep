@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Slider</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+    <style>
+        .slick-slide {
+            padding: 10px;
+        }
+
+        .slick-prev,
+        .slick-next {
+            color: black;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .slick-prev {
+            left: -50px;
+        }
+
+        .slick-next {
+            right: -50px;
+        }
+
+        .slick-prev:before,
+        .slick-next:before {
+            font-family: 'slick';
+            font-size: 20px;
+            line-height: 1;
+            opacity: .75;
+            color: white;
+        }
+
+        .slick-prev:before {
+            content: '←';
+        }
+
+        .slick-next:before {
+            content: '→';
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container mx-auto mt-10">
+        <div class="relative">
+            <div class="multiple-items ">
+                <div><img src="https://bephoanggia.com/images/categories/may-rua-bat.jpg" alt="Product 1" class="w-full h-auto"></div>
+                <div><img src="https://bephoanggia.com/images/categories/may-rua-bat.jpg" alt="Product 2" class="w-full h-auto"></div>
+                <div><img src="https://bephoanggia.com/images/categories/may-rua-bat.jpg" alt="Product 3" class="w-full h-auto"></div>
+                <div><img src="https://bephoanggia.com/images/categories/may-rua-bat.jpg" alt="Product 4" class="w-full h-auto"></div>
+                <div><img src="https://bephoanggia.com/images/categories/may-rua-bat.jpg" alt="Product 5" class="w-full h-auto"></div>
+                <!-- Add more products as needed -->
+            </div>
+        </div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.multiple-items').slick({
+                infinite: true,
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 1000 // Thời gian giữa các lần chuyển slide (tính bằng mili giây)
+            });
+        });
+    </script>
+</body>
+
+</html>
